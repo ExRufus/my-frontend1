@@ -7,7 +7,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getProfile = async () => {
     try {
-      const res = await fetch("https://rich-cyan-tuna-tutu.cyclic.app", {
+      const res = await fetch("http://localhost:8000/dashboard", {
         method: "POST",
         headers: { token: localStorage.token }
       });

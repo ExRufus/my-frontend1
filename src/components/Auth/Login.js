@@ -18,7 +18,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { code };
       const response = await fetch(
-        "https://rich-cyan-tuna-tutu.cyclic.app",
+        "http://localhost:8000/login",
         {
           method: "POST",
           headers: {
