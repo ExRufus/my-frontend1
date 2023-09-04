@@ -8,7 +8,7 @@ const TodoListPage = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app/todos", {
+      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app", {
         method: "GET",
         headers: { token: localStorage.token }
       });
@@ -25,7 +25,7 @@ const TodoListPage = () => {
       setLoading(true);
       const user_id = localStorage.token;
 
-      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app/todos", {
+      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

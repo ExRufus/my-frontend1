@@ -21,7 +21,7 @@ const Register = ({ setAuth }) => {
     try {
       const body = { email, username, city, code };
 
-      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app",
+      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app/register",
         {
           method: "POST",
           headers: {
