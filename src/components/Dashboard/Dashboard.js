@@ -7,7 +7,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getProfile = async () => {
     try {
-      const res = await fetch("http://localhost:8000/dashboard", {
+      const res = await fetch("https://rich-cyan-tuna-tutu.cyclic.app", {
         method: "POST",
         headers: { token: localStorage.token }
       });
@@ -43,7 +43,7 @@ const Dashboard = ({ setAuth }) => {
       <button onClick={e => logout(e)} className="btn btn-primary">
         Logout
       </button>
-      <Link to="/todos">Todos</Link>
+      <Link to="/">Todos</Link>
     </Fragment>
   );
 };

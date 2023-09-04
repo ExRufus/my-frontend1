@@ -12,9 +12,9 @@ import { toast } from "react-toastify";
 
 //components
 
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Dashboard from "./components/Dashboard";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
+import Dashboard from "./components/Dashboard/Dashboard";
 import TodoListPage from "./components/TodoList";
 
 toast.configure();
@@ -22,7 +22,7 @@ toast.configure();
 function App() {
   const checkAuthenticated = async () => {
     try {
-      const res = await fetch("http://localhost:8000/is-verify", {
+      const res = await fetch("https://rich-cyan-tuna-tutu.cyclic.app", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
@@ -85,7 +85,7 @@ function App() {
             />
             <Route
               exact
-              path="/todos"
+              path="/"
               render={props =>
                 isAuthenticated ? (
                   <TodoListPage {...props} setAuth={setAuth} />

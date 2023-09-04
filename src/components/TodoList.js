@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+import { Link, Redirect } from "react-router-dom";
 
 const TodoListPage = () => {
   const [todos, setTodos] = useState([]);
@@ -7,7 +8,7 @@ const TodoListPage = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:8000/todos", {
+      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app/todos", {
         method: "GET",
         headers: { token: localStorage.token }
       });
@@ -22,13 +23,15 @@ const TodoListPage = () => {
   const createTask = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:8000/todos", {
+      const user_id = localStorage.token;
+
+      const response = await fetch("https://rich-cyan-tuna-tutu.cyclic.app/todos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           token: localStorage.token
         },
-        body: JSON.stringify({ title: newTask })
+        body: JSON.stringify({ title: newTask, completed: false, user_id })
       });
 
       const data = await response.json();
@@ -48,7 +51,7 @@ const TodoListPage = () => {
   }, []);
 
   return (
-    <div>
+    <Fragment>
       <h1 className="mt-5">Todo List</h1>
       <div>
         <input
@@ -79,7 +82,8 @@ const TodoListPage = () => {
           ))}
         </tbody>
       </table>
-    </div>
+      <Link to="/dashboard">Dashboard</Link>
+    </Fragment>
   );
 };
 
