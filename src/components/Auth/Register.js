@@ -16,33 +16,38 @@ const Register = ({ setAuth }) => {
   const onChange = e =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
-  const onSubmitForm = async e => {
-    e.preventDefault();
-    try {
-      const body = { email, username, city, code };
-
-      const response = await fetch("https://fsw-todo-list-app.vercel.app/register", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify(body),
-      });      
-      
-      const parseRes = await response.json();
-
-      if (parseRes.token) {
-        localStorage.setItem("token", parseRes.token);
-        setAuth(true);
-        toast.success("Register Successfully");
-      } else {
-        setAuth(false);
-        toast.error(parseRes);
+    const onSubmitForm = async e => {
+      e.preventDefault();
+      try {
+        const body = { email, username, city, code };
+    
+        const response = await fetch("https://fsw-todo-list-app.vercel.app/register", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify(body)
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+    
+        const parseRes = await response.json();
+    
+        if (parseRes.token) {
+          localStorage.setItem("token", parseRes.token);
+          setAuth(true);
+          toast.success("Register Successfully");
+        } else {
+          setAuth(false);
+          toast.error(parseRes);
+        }
+      } catch (err) {
+        console.error("Ada kesalahan:", err);
       }
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
+    };
+    
 
   return (
     <Fragment>
