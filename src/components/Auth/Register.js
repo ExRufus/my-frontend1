@@ -27,13 +27,7 @@ const Register = ({ setAuth }) => {
           "Content-type": "application/json"
         },
         body: JSON.stringify(body),
-        mode: "no-cors" 
       });      
-      
-      response        
-        .catch((error) => {
-          console.error("Ada kesalahan:", error);
-        });
       
       const parseRes = await response.json();
 
