@@ -18,7 +18,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { code };
       const response = await fetch(
-        "http://localhost:8000/login",
+        "https://gray-quaint-jay.cyclic.app/login",
         {
           method: "POST",
           headers: {

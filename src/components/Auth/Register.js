@@ -21,15 +21,20 @@ const Register = ({ setAuth }) => {
     try {
       const body = { email, username, city, code };
 
-      const response = await fetch("http://localhost:8000/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json"
-          },
-          body: JSON.stringify(body)
-        }
-      );
+      const response = await fetch("https://gray-quaint-jay.cyclic.app/register", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(body)
+      });
+      
+      response        
+        .catch((error) => {
+          // Handle kesalahan selama fetch atau dalam then
+          console.error("Ada kesalahan:", error);
+        });
+      
       const parseRes = await response.json();
 
       if (parseRes.token) {

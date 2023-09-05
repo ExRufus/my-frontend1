@@ -7,7 +7,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getProfile = async () => {
     try {
-      const res = await fetch("http://localhost:8000/dashboard", {
+      const res = await fetch("https://gray-quaint-jay.cyclic.app/dashboard", {
         method: "POST",
         headers: { token: localStorage.token }
       });
