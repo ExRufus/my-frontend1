@@ -22,7 +22,7 @@ toast.configure();
 function App() {
   const checkAuthenticated = async () => {
     try {
-      const res = await fetch("https://rich-cyan-tuna-tutu.cyclic.app", {
+      const res = await fetch("https://gray-quaint-jay.cyclic.app", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });

@@ -26,8 +26,9 @@ const Register = ({ setAuth }) => {
         headers: {
           "Content-type": "application/json"
         },
-        body: JSON.stringify(body)
-      });
+        body: JSON.stringify(body),
+        mode: "no-cors" // Tambahkan mode no-cors di sini
+      });      
       
       response        
         .catch((error) => {
