@@ -21,18 +21,17 @@ const Register = ({ setAuth }) => {
     try {
       const body = { email, username, city, code };
 
-      const response = await fetch("https://gray-quaint-jay.cyclic.app/register", {
+      const response = await fetch("https://fsw-todo-list-app.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-type": "application/json"
         },
         body: JSON.stringify(body),
-        mode: "no-cors" // Tambahkan mode no-cors di sini
+        mode: "no-cors" 
       });      
       
       response        
         .catch((error) => {
-          // Handle kesalahan selama fetch atau dalam then
           console.error("Ada kesalahan:", error);
         });
       

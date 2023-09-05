@@ -22,7 +22,7 @@ toast.configure();
 function App() {
   const checkAuthenticated = async () => {
     try {
-      const res = await fetch("https://gray-quaint-jay.cyclic.app", {
+      const res = await fetch("https://fsw-todo-list-app.vercel.app", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
