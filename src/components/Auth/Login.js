@@ -18,7 +18,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { code };
       const response = await fetch(
-        "https://gray-quaint-jay.cyclic.app/login",
+        "https://weak-ruby-termite-garb.cyclic.app/login",
         {
           method: "POST",
           headers: {
