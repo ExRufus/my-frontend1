@@ -21,7 +21,7 @@ const Register = ({ setAuth }) => {
       try {
         const body = { email, username, city, code };
     
-        const response = await fetch("https://fsw-todo-list-app.vercel.app/register", {
+        const response = await fetch("https://gray-quaint-jay.cyclic.app/register", {
           method: "POST",
           headers: {
             "Content-type": "application/json"

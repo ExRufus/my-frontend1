@@ -18,7 +18,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { code };
       const response = await fetch(
-        "https://fsw-todo-list-app.vercel.app/login",
+        "https://gray-quaint-jay.cyclic.app/login",
         {
           method: "POST",
           headers: {
