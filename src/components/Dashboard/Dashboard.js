@@ -7,7 +7,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getProfile = async () => {
     try {
-      const res = await fetch("https://weak-ruby-termite-garb.cyclic.app/dashboard", {
+      const res = await fetch("https://todolist-app-fsw.cyclic.app/dashboard", {
         method: "POST",
         headers: { token: localStorage.token }
       });

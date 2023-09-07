@@ -22,7 +22,7 @@ toast.configure();
 function App() {
   const checkAuthenticated = async () => {
     try {
-      const res = await fetch("https://weak-ruby-termite-garb.cyclic.app/is-verify", { 
+      const res = await fetch("https://todolist-app-fsw.cyclic.app/is-verify", { 
         method: "POST",
         headers: { jwt_token: localStorage.token }
       });
